@@ -26,7 +26,7 @@ app.get("/edit/:formId/deactivate",auth.sameUser,(req,res)=>{
 app.get("/edit/:formId/delete",auth.sameUser,(req,res)=>{
     Form.findByIdAndDelete(req.params.formId,(err)=>{
         if(err) return console.log(err)
-        res.send(200)
+        res.sendStatus(200)
     })
 })
 
